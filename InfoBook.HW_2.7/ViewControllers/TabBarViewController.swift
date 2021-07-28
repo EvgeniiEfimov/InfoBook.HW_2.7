@@ -7,38 +7,36 @@
 
 import UIKit
 
-var dataPeople: DataManager!
-var people: [Persone]!
-
 class TabBarViewController: UITabBarController {
-
-    func newValue (dataPeople: DataManager!) -> [Persone] {
-        guard let valueDataManager = dataPeople else { return [] }
-        if valueDataManager.emailArray.count != 0 {
-        let newName = valueDataManager.nameArray.remove(at: random(array: valueDataManager.nameArray))
-        let newSurname = valueDataManager.surnameArray.remove(at: random(array: valueDataManager.surnameArray))
-        let newPhoneNumber = valueDataManager.phoneNumberArray.remove(at: random(array: valueDataManager.phoneNumberArray))
-            let newEmail = valueDataManager.emailArray.remove(at: random(array: valueDataManager.emailArray))
-        people.insert(.init(name: newName, surname: newSurname, phoneNumber: newPhoneNumber, email: newEmail), at: people.endIndex)
-        }
-    return people
+        
+    var people: [Persone] = []
+   private let arrayCount = DataManager.shared.emailArray.count
+   
+    override func viewDidLoad() {
+    newValue()
+    choiceVC(arrayPeople: people)
     }
     
-    func random(array: [String]) -> Int {
-        let value =  Int.random(in: array.startIndex...array.endIndex)
+    private func newValue () {
+        while people.count < arrayCount {
+            let newName = DataManager.shared.nameArray.remove(at: random(array: DataManager.shared.nameArray))
+            let newSurname = DataManager.shared.surnameArray.remove(at: random(array: DataManager.shared.surnameArray))
+            let newPhoneNumber = DataManager.shared.phoneNumberArray.remove(at: random(array: DataManager.shared.phoneNumberArray))
+            let newEmail = DataManager.shared.emailArray.remove(at: random(array: DataManager.shared.emailArray))
+            people.append(.init(name: newName, surname: newSurname, phoneNumber: newPhoneNumber, email: newEmail))
+        }
+    }
+    
+   private func random(array: [String]) -> Int {
+        let value =  Int.random(in: array.startIndex..<array.endIndex)
   return value
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarVC = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarVC.viewControllers else { return }
-        for viewController in viewControllers {
-            if let startController = viewController as? StartTableViewController {
-                startController.allPeople = newValue(dataPeople: dataPeople)
-            } else if let tableVC = viewController as? TableBookViewController {
-                tableVC.allPeople = newValue(dataPeople: dataPeople)
-            }
-        }
-//        guard let startTableVC = tabBarVC as? StartTableViewController else { return }
+    
+   private func choiceVC(arrayPeople: [Persone]) {
+        guard let startVC = viewControllers?.first as? StartTableViewController else { return }
+        guard let tableBookVC = viewControllers?.last as? TableBookViewController else { return }
         
+        startVC.allPeople = arrayPeople
+        tableBookVC.allPeople = arrayPeople
     }
 }

@@ -17,6 +17,7 @@
 		CE2A94BF26B029C500A9A7E2 /* modelPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A94BE26B029C500A9A7E2 /* modelPerson.swift */; };
 		CE2A94CE26B0503300A9A7E2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A94CD26B0503300A9A7E2 /* DataManager.swift */; };
 		CE2A94D126B05B6A00A9A7E2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A94D026B05B6A00A9A7E2 /* TabBarViewController.swift */; };
+		CE44933026B1DC1700608166 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44932F26B1DC1700608166 /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE2A94BE26B029C500A9A7E2 /* modelPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelPerson.swift; sourceTree = "<group>"; };
 		CE2A94CD26B0503300A9A7E2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE2A94D026B05B6A00A9A7E2 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CE44932F26B1DC1700608166 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				CE2A94D026B05B6A00A9A7E2 /* TabBarViewController.swift */,
-				CE2A94B726B0284300A9A7E2 /* TableBookViewController.swift */,
 				CE2A94B426B024CA00A9A7E2 /* StartTableViewController.swift */,
+				CE2A94B726B0284300A9A7E2 /* TableBookViewController.swift */,
+				CE44932F26B1DC1700608166 /* ContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2A949E26B023E200A9A7E2 /* AppDelegate.swift in Sources */,
+				CE44933026B1DC1700608166 /* ContactViewController.swift in Sources */,
 				CE2A94CE26B0503300A9A7E2 /* DataManager.swift in Sources */,
 				CE2A94B526B024CA00A9A7E2 /* StartTableViewController.swift in Sources */,
 				CE2A94BF26B029C500A9A7E2 /* modelPerson.swift in Sources */,
