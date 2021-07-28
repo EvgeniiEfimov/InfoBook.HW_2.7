@@ -13,8 +13,10 @@ class TabBarViewController: UITabBarController {
    private let arrayCount = DataManager.shared.emailArray.count
    
     override func viewDidLoad() {
+        super .viewDidLoad()
     newValue()
     choiceVC(arrayPeople: people)
+    
     }
     
     private func newValue () {
