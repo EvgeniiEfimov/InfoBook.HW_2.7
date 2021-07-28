@@ -31,11 +31,11 @@ class TabBarViewController: UITabBarController {
     
    private func random(array: [String]) -> Int {
         let value =  Int.random(in: array.startIndex..<array.endIndex)
-  return value
+    return value
     }
     
    private func choiceVC(arrayPeople: [Persone]) {
-        guard let startVC = viewControllers?.first as? StartTableViewController else { return }
+        guard let startVC = viewControllers?.first as?StartTableViewController else { return }
         guard let tableBookVC = viewControllers?.last as? TableBookViewController else { return }
         
         startVC.allPeople = arrayPeople
